@@ -12,15 +12,15 @@
     <meta id="shareDescription" property="og:description" content="点击进入直播间">
     <meta property="og:type" content="website">
     <!-- 微信分享图片 -->
-    <meta id="shareImage" property="og:image" content="https://tiger9158.github.io/share-logo.png?v=20260815">
-    <meta property="og:image:secure_url" content="https://tiger9158.github.io/share-logo.png?v=20260815">
+    <meta id="shareImage" property="og:image" content="/share-logo.png?v=20260815">
+    <meta property="og:image:secure_url" content="/share-logo.png?v=20260815">
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
-    <link id="shareImageLink" rel="image_src" href="https://tiger9158.github.io/share-logo.png?v=20260815">
+    <link id="shareImageLink" rel="image_src" href="/share-logo.png?v=20260815">
     <!-- 兼容其他分享抓取方式 -->
     <meta id="itemTitle" itemprop="name" content="直播">
     <meta id="itemDescription" itemprop="description" content="点击进入直播间">
-    <meta id="itemImage" itemprop="image" content="https://tiger9158.github.io/share-logo.png?v=20260815">
+    <meta id="itemImage" itemprop="image" content="/share-logo.png?v=20260815">
     <style>
         * {
             margin: 0;
@@ -78,7 +78,7 @@
 
 <body>
     <!-- 不要删除，这是给微信读取的实际图片 -->
-    <img id="shareCover" src="https://tiger9158.github.io/share-logo.png?v=20260815" width="300" height="300"
+    <img id="shareCover" src="/share-logo.png?v=20260815" width="300" height="300"
         alt="直播">
     <iframe id="liveFrame" allow="autoplay; fullscreen" allowfullscreen></iframe>
     <script>
@@ -100,7 +100,7 @@
              * 分享图片固定使用 GitHub 上的图片，
              * 不再使用 fxfx.stmpsk.cn 的 HTTP 图片。
              */
-            var DEFAULT_IMAGE = 'https://tiger9158.github.io/share-logo.png?v=20260815';
+            var DEFAULT_IMAGE = '/share-logo.png?v=20260815';
 
             var liveFrame = document.getElementById('liveFrame');
 
@@ -349,6 +349,7 @@
                 encodeURIComponent(spid) +
                 '&sh=' +
                 encodeURIComponent(
+                    window.location.origin +
                     window.location.pathname);
 
             if (oauthCode && oauthState) {
